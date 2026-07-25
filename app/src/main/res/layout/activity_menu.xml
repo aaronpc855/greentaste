@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9FAF9">
+
+    <!-- HEADER -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_circle_white"
+            android:padding="6dp"
+            android:src="@drawable/baseline_search_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Urb. Santa Isabel, Piura"
+            android:textStyle="bold"
+            android:textColor="#333333" />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/outline_add_shopping_cart_24" />
+    </RelativeLayout>
+
+    <!-- CONTENIDO -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_above="@id/bottomNav">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- SLIDER -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerSlider"
+                android:layout_width="match_parent"
+                android:layout_height="220dp" />
+
+            <!-- INDICADORES -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/indicador1"
+                    android:layout_width="15dp"
+                    android:layout_height="3dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="#8BC34A" />
+
+                <View
+                    android:id="@+id/indicador2"
+                    android:layout_width="15dp"
+                    android:layout_height="3dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="#E0E0E0" />
+
+                <View
+                    android:id="@+id/indicador3"
+                    android:layout_width="15dp"
+                    android:layout_height="3dp"
+                    android:background="#E0E0E0" />
+            </LinearLayout>
+
+            <!-- CATEGORÍAS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <include android:id="@+id/catHamburguesa" layout="@layout/item_categoria_cuadrado" />
+                <include android:id="@+id/catBowl" layout="@layout/item_categoria_cuadrado" />
+                <include android:id="@+id/catParrilla" layout="@layout/item_categoria_cuadrado" />
+                <include android:id="@+id/catBrunch" layout="@layout/item_categoria_cuadrado" />
+                <include android:id="@+id/catBebida" layout="@layout/item_categoria_cuadrado" />
+            </LinearLayout>
+
+            <!-- RECOMENDADOS -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp">
+
+                <TextView
+                    android:id="@+id/tvRecomendados"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recomendados para ti"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="Ver más"
+                    android:textSize="12sp"
+                    android:background="@drawable/bg_capsule_gray"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="4dp" />
+            </RelativeLayout>
+
+            <!-- FILA 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <include android:id="@+id/itemLentejas" layout="@layout/item_producto_grande" />
+                <include android:id="@+id/itemChaufa" layout="@layout/item_producto_grande" />
+            </LinearLayout>
+
+            <!-- FILA 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <include android:id="@+id/itemEnsalada" layout="@layout/item_producto_grande" />
+                <include android:id="@+id/itemPoke" layout="@layout/item_producto_grande" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BOTTOM NAV -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:elevation="10dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:src="@drawable/outline_home_24"
+            app:tint="#8BC34A" />
+
+        <ImageView
+            android:id="@+id/btnNavBuscar"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_search_24"
+            app:tint="#999999" />
+
+        <ImageView
+            android:id="@+id/btnCartPulse"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_circle_green"
+            android:padding="14dp"
+            android:src="@drawable/outline_add_shopping_cart_24"
+            app:tint="@android:color/white" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:src="@drawable/outline_attach_money_24" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:src="@drawable/outline_account_circle_24" />
+
+    </LinearLayout>
+
+</RelativeLayout>

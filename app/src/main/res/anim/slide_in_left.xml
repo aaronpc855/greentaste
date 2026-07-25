@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- movimiento suave vertical -->
+    <translate
+        android:fromYDelta="0dp"
+        android:toYDelta="-8%"
+        android:duration="1500"
+        android:repeatCount="infinite"
+        android:repeatMode="reverse"/>
+
+    <!-- fade suave opcional -->
+    <alpha
+        android:fromAlpha="0.85"
+        android:toAlpha="1.0"
+        android:duration="1500"
+        android:repeatCount="infinite"
+        android:repeatMode="reverse"/>
+
+</set>
